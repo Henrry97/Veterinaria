@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+<body>
+
+  <header id="headerArchivos" class="custom-navbar">
+    <div class="nav-logo">
+      <ul class="nav justify-content-center">
+        <li class="nav-item ">
+          <a class="nav-link active text-dark" aria-current="page" href="/home">
+            <i class='bx bx-home-smile'></i>
+            Inicio
+          </a>
+        </li>
+        <li class="nav-item" style="background-color: #fff; border-radius: 10px;">
+          <a class="nav-link text-dark" href="/archivos">
+            <i class='bx bx-folder-plus'></i>
+            Archivos
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="/cita">
+            <i class='bx bxs-calendar-plus'></i>
+            Citas
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class='bx bx-user'></i>
+            Perfil
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/perfil">Perfil</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/logout">Cerrar sesión</a>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="wave" style="width: 100vw; height: 80px; overflow: hidden;">
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+        <path d="M0.00,49.98 C165.63,140.63 337.75,-7.38 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+          style="stroke: none; fill: #fff;">
+        </path>
+      </svg>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="contenedor">
+      <h2 class=""
+        style="color: #000000fe; font-size: 40px; margin-bottom: 30px; text-align: center; font-weight: bold;">
+        Usuarios Disponibles</h2>
+      <p style="text-align: center; font-size: 24px; font-weight: bold; color: gray; border-bottom: 3px solid #22B3EB;">
+        En esta sección podrás Podras tenes acceso a los usuarios que estan registrados en la aplicación móvil
+      </p>
+
+
+    </div>
+
+
+
+    <div id="search-section" class="container-fluid">
+      <div class="row justify-content-center">
+        <div class=" col-md-6 mt-4 mb-4">
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <section class="contenedorArchives Descripcion">
+  <div class="user mx-4">
+    <div class="row">
+      {{#each contactos}}
+      <div class="col-md-3 mb-4" style="margin-top: 10px;">
+        <div class="card mb-3" data-nombre="{{this.nombre}}"
+          style="display: flex; flex-direction: column; align-items: center; padding: 10px; background-image: url('images/back.jpg'); background-size: cover; background-position: center; box-shadow:  0 0 10px rgba(0, 0, 0, 0.2);">
+          <div style="margin-bottom: 10px;">
+            {{#if this.photo}}
+            <img src="{{this.photo}}" class="card-img-top rounded-circle mx-auto"
+              style="width: 100px; height: 100px;" alt="Foto de {{this.nombre}}">
+            {{else}}
+            <img src="images/user.avif" class="card-img-top rounded-circle mx-auto"
+              style="width: 100px; height: 100px;" alt="Foto predeterminada">
+            {{/if}}
+          </div>
+          <div class="card-body text-center">
+            <!-- Mostrar el nombre del contacto -->
+            <h5 class="card-title">{{this.nombre}}</h5>
+            <!-- Agregar otros detalles del contacto -->
+            <p class="card-text"><strong>Teléfono:</strong><br> {{this.telefono}}</p>
+            <p class="card-text"><strong>Correo:</strong><br> {{this.correo}}</p>
+          </div>
+          <!-- Agregar botones para borrar, ver detalles y mensajes -->
+          <div class="card-footer" style="margin-top: auto;">
+            <div class="d-flex justify-content-center">
+              <a href="/presentar_mascota?id={{this.id}}" class="btn btn-primary btn-sm mx-2">Ver detalles</a>
+              <a href="/mensajes/{{this.id}}" class="btn btn-success btn-sm mx-2">Mensajes</a>
+              <a href="/borrar/{{this.id}}" class="btn btn-danger btn-sm mx-2">Borrar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+
+    <section class="contenedor" style="text-align: center; font-size: 24px; font-weight: bold; color: gray;">
+      <section class="galeria">
+        <div class="cardsG">
+          <div class="cardG">
+            <img src="images/perro.png" alt="">
+          </div>
+          <div class="cardG">
+            <img src="images/gato.png" alt="">
+          </div>
+          <div class="cardG">
+            <img src="images/pajaro.png" alt="">
+          </div>
+          <div class="cardG">
+            <img src="images/feliz.png" alt="">
+          </div>
+
+        </div>
+      </section>
+    </section>
+
+  </main>
+
+  <footer>
+
+    <h2 class="titu_fin"> &copy; Clinica Veterinaria Solvitec <br>Todos los Derechos Reservados</h2>
+
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const searchBar = document.querySelector('input[type="search"]'); // Asegúrate de que este selector coincida con tu barra de búsqueda
+      searchBar.addEventListener('input', function (e) {
+        const searchTerm = e.target.value.toLowerCase();
+        const contactCards = document.querySelectorAll('.card[data-nombre]'); // Selecciona todas las tarjetas de contacto
+
+        contactCards.forEach(card => {
+          const nombre = card.getAttribute('data-nombre');
+          if (nombre.toLowerCase().includes(searchTerm.toLowerCase())) {
+            card.parentElement.style.display = ''; // Muestra la tarjeta si coincide
+          } else {
+            card.parentElement.style.display = 'none'; // Oculta la tarjeta si no coincide
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+
+
+
+
+
+</html>

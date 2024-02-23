@@ -1,0 +1,351 @@
+#navbar-section {
+  width: 100%;
+  height: 500px;
+  background: #538cb8d9;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2ebd904b, #22b2eb8b), url(images/Clinica-veterinaria.jpg);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, hsla(161, 61%, 46%, 0.425), #22b2eb94), url(images/Clinica-veterinaria.jpg);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  padding-top: 30px;
+  padding-right: 10px;
+
+  /* Color de fondo celeste */
+}
+
+
+header .texto-header {
+  display: flex;
+  height: 430px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.contenedor {
+  padding: 30px 0;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.parque {
+  font-size: 50px;
+  color: white;
+}
+
+.parque2 {
+  font-size: 70px;
+  color: white;
+}
+
+.logo_solvitec {
+
+  max-width: 50px;
+  /* El máximo ancho que quieres que tenga la imagen */
+  max-height: 50px;
+  /* El máximo alto que quieres que tenga la imagen */
+
+}
+
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.titulo {
+  color: #000000fe;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 60px;
+  border-bottom: 3px solid #22B3EB;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
+.custom-navbar .nav-item {
+  margin-right: 15px;
+  margin-left: 15px;
+  font-weight: bold;
+  /* Agrega espacio entre los elementos de navegación */
+}
+
+.custom-navbar .nav-item:last-child {
+  margin-right: 0;
+  /* Elimina el margen derecho del último elemento */
+}
+
+
+.custom-navbar .nav-item:hover .nav-link {
+  background-color: #ffffff;
+  /* Cambia el color de fondo al pasar el mouse */
+  color: white;
+  /* Cambia el color del texto al pasar el mouse */
+  border-radius: 10px;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.nav-logo {
+  display: flex;
+  /* Utiliza una flexbox */
+  align-items: center;
+  /* Alinea verticalmente el logo y la lista */
+  justify-content: center;
+  /* Centra los elementos de la lista horizontalmente */
+}
+
+footer {
+  background: #538cb8d9;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #22b2eb8b, hsla(161, 61%, 46%, 0.294));
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #22b2eb94, hsla(161, 61%, 46%, 0.425));
+  padding: 30px 0 30px 0;
+  margin: auto;
+  overflow: hidden;
+}
+
+.contenedor-footer {
+  display: flex;
+  width: 90%;
+  justify-content: space-evenly;
+  margin: auto;
+  border-bottom: 1px solid #ccc;
+
+}
+
+.titu_fin {
+  text-align: center;
+  font-size: 20px;
+  margin: 0px 0 0 0;
+  color: #000000
+}
+
+/* estilos archivos*/
+
+#headerArchivos {
+
+
+  width: 100%;
+  height: 150px;
+  background: #538cb8d9;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, hsla(161, 61%, 46%, 0.294), #22b2eb8b);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, hsla(161, 61%, 46%, 0.425), #22b2eb94);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+}
+
+#search-section {
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#search-section .form-control {
+  border-radius: 5px;
+}
+
+#search-section .btn {
+  border-radius: 5px;
+}
+
+.contenedorArchives {
+
+  padding: 60px 0;
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  overflow: hidden;
+  background: #546b7dd9;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #546b7dd9, rgba(84, 107, 125, 0.982)), url(images/imagen_fondo_home.png);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #546b7dd9, rgb(84, 107, 125)), url(images/imagen_fondo_home.png);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  margin-bottom: 20px;
+
+}
+
+/*style presentar mascota*/
+
+.headerDetalles {
+
+  width: 100%;
+  height: 100px;
+  background: white;
+  /* fallback for old browsers */
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  padding-top: 20px;
+  padding-right: 30px;
+
+
+
+}
+
+.mainGeneral {
+
+  height: 300px;
+  margin-bottom: 30px;
+  background: -webkit-linear-gradient(to right, #22b2ebf6, #2ebd904b);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #22b2ebf6, #2ebd904b);
+}
+
+.mainDetalles {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 20px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.containerDetalles_1 {
+  width: 50%;
+  text-align: start;
+}
+
+.containerDetalles_2 {
+  width: 50%;
+  align-items: center;
+}
+
+.galeria {
+
+
+  background: white;
+  /* fallback for old browsers */
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.cardsG {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.cardG {
+  width: 10%;
+  margin-bottom: 10px;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+  padding: 10px;
+  border-radius: 5px;
+
+
+}
+
+.cardG img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+}
+
+.itemsContainer {
+  display: flex;
+  box-shadow:  0 0 30px #22b2eb8b;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.itemsContainer .itemPhoto img{
+  border-radius: 20%;
+  width: 40%;
+}
+
+.itemDataG {
+  margin-left: 10px;
+  width: 100%;
+  width: 60%;
+}
+
+.sectionFinal{
+
+
+  padding: 60px 0;
+  width: 100%;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background: #546b7dd9;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #546b7dd9, rgba(84, 107, 125, 0.982)), url(images/imagen_fondo_home.png);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #546b7dd9, rgb(84, 107, 125)), url(images/imagen_fondo_home.png);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.headerMensaje{
+
+  background: #538cb8d9;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #22b2eb8b, hsla(161, 61%, 46%, 0.294));
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #22b2eb94, hsla(161, 61%, 46%, 0.425));
+  margin: auto;
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+
+.contenedorPerfil{
+
+  background: #538cb8d9;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #22b2eb8b, hsla(161, 61%, 46%, 0.294));
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #22b2eb94, hsla(161, 61%, 46%, 0.425));
+  overflow: hidden;
+
+}
+
+.cardServicios{
+
+  width: 200px;
+  text-align: center;
+  background: #538cb8d9;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #22b2eb8b, hsla(161, 61%, 46%, 0.294));
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #22b2eb94, hsla(161, 61%, 46%, 0.425));
+  overflow: hidden;
+  margin-right: 15px;
+  border-radius: 8px;
+  padding: 8px;
+
+
+
+
+}

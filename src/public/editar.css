@@ -1,0 +1,37 @@
+.formularioAtencion {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formularioAtencion label {
+    font-weight: bold;
+  }
+  
+  .formularioAtencion input[type="date"],
+  .formularioAtencion input[type="text"],
+  .formularioAtencion textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+  }
+  
+  .formularioAtencion button[type="submit"],
+  .formularioAtencion button[type="button"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+ 
+  
+  .cancelarAtencionBtn {
+    margin-top: 10px;
+  
+  }
+  

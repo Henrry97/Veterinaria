@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<body>
+
+  <header id="navbar-section" class="custom-navbar">
+    <div class="nav-logo">
+      <ul class="nav justify-content-center">
+        <li class="nav-item " style="background-color: #fff; border-radius: 10px;">
+          <a class="nav-link active text-dark" style="font-weight: bold;" aria-current="page" href="/home">
+            <i class='bx bx-home-smile'></i>
+            Inicio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="/archivos">
+            <i class='bx bx-folder-plus'></i>
+            Archivos
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="/cita">
+            <i class='bx bxs-calendar-plus'></i>
+            Citas
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class='bx bx-user'></i>
+            Perfil
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/perfil">Perfil</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/logout">Cerrar sesión</a>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+    <section class="texto-header">
+      <h2 class="parque"> Solvitec </h2>
+      <h1 class="parque2">Clinica Veterinaria</h1>
+
+      <h3></h3>
+    </section>
+
+
+
+    <div class="wave" style="width: 100vw; height: 90px; overflow: hidden;">
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+        <path d="M0.00,49.98 C165.63,140.63 337.75,-7.38 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+          style="stroke: none; fill: #fff;">
+        </path>
+      </svg>
+    </div>
+
+
+  </header>
+
+  <main>
+
+    <section class="contenedor Descripcion">
+      <h2 class="titulo"> Citas Disponible</h2>
+
+      <div class="user mt-4 mb-4 mx-4">
+        <div class="row">
+          {{#each citas}}
+          <div class="col-md-3">
+            <div class="card" id="cita-{{this.id}}" style="margin-top: 20px;">
+              <div class="card-body" style="box-shadow:  0 0 30px #22b2eb8b;">
+                <h5 class="card-title" style="text-align: center; margin-bottom: 10px; font-size: 22px;">
+                  <b>{{this.datos.nombre}}</b>
+                </h5>
+                <h6 class="card-title" style="text-align: center; margin-bottom: 30px; "><b>{{this.datos.status}}</b>
+                  </h5>
+
+
+                  <p class="card-subtitle mb-2 text-muted"><b>Mascota:</b>
+                    {{this.datos.mascota}}</p>
+                  <p class="card-text mb-2 text-muted"><b>Motivo: </b> {{this.datos.motivo}}</p>
+                  <p class="card-subtitle mb-2 text-muted"><b>Fecha:</b>
+                    {{this.datos.fecha}}</p>
+                  <div class="text-end buttons" style="margin-top: 30px;">
+                    <button type="button" class="btn btn-success">Aceptar</button>
+                    <button type="button" class="btn btn-danger">Rechazar</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+
+    </section>
+
+
+
+
+
+
+  </main>
+
+  <footer>
+
+    <h2 class="titu_fin"> &copy; Clinica Veterinaria Solvitec <br>Todos los Derechos Reservados</h2>
+
+  </footer>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>

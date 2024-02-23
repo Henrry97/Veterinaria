@@ -1,0 +1,95 @@
+<div class="container mt-5 border border-primary rounded p-4">
+    <div class="row">
+        <!-- Formulario del negocio (a la izquierda) -->
+        <div class="col-md-6">
+            <h2 class="tex text-center">Datos personales</h2>
+            <form id="formularioNegocio">
+                
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="nombre" name="nombre"
+                        placeholder="Nombre y Apellido" autofocus>
+                    <label for="nombre">Nombre y Apellido</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="correo" name="correo"
+                        placeholder="ejemplo123@gmai.com" >
+                    <label for="correo">Correo electronico</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="telefono" name="telefono"
+                        placeholder="Telefono o Celular" >
+                    <label for="telefono">Telefono o Celular</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="cedula" name="cedula"
+                        placeholder="Número de identificación" >
+                    <label for="cedula">Número de identificación</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="lugar" name="lugar"
+                        placeholder="Lugar de trabajo">
+                    <label for="lugar">Lugar de trabajo</label>
+                </div>
+            </form>
+        </div>
+        <!-- Formulario del cliente (a la derecha) -->
+        <div class="col-md-6">
+            <h2 class="tex text-center">Datos de la veterinaria </h2>
+            <form id="formularioCliente">
+  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="nombre_local" name="nombre_local"
+                        placeholder="Nombre de la clínica veterinaria" autofocus>
+                    <label for="nombre_local">Nombre de la clínica veterinaria</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="direccion" name="direccion"
+                        placeholder="ejemplo123@gmai.com" >
+                    <label for="direccion">Dirección</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="telefono_local" name="telefono_local"
+                        placeholder="Telefono o Celular" >
+                    <label for="telefono_local">Telefono o Celular</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="especialidad" name="especialidad"
+                        placeholder="Especialidades médicas " >
+                    <label for="especialidad">Especialidades médicas </label>
+                </div>
+              
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="lunes_viernes" name="lunes_viernes" placeholder=" ">
+            <label for="lunes_viernes">Hora :  LUNES / VIERNES</label>
+        </div>
+    </div>
+    <!-- Repite para cada día de la semana -->
+    <!-- Por ejemplo -->
+    <div class="col-md-6">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="sabado_dominfo" name="sabado_domingo" placeholder="Martes - Hora de atención">
+            <label for="sabado_domingo">Hora : SABADO / DOMINGO </label>
+        </div>
+    </div>
+</div>
+
+
+
+              
+            </form>
+        </div>
+    </div>
+    <!-- Botón de guardar en el centro -->
+    <div class="row mt-3">
+        <div class="col text-center">
+            <button type="button" class="btn btn-primary" onclick="guardarDatos()">Guardar</button>
+        </div>
+    </div>
+</div>

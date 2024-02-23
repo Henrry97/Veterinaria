@@ -1,0 +1,20 @@
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <form class="border border-primary p-5 rounded shadow-lg position-relative background-container" style="width: 500px; box-shadow:  0 0 30px #22b2eb8b;" action="/iniciar_sesion" method="POST">
+    <div class="circle-image position-absolute top-0 start-50 translate-middle" style="z-index: 1; width: 100px; height: 100px;">
+      <img src="images/img.jpg" alt="Imagen de perfil" width="100%" height="100%" style="object-fit: cover; border-radius: 50%;">
+    </div>
+    <h2 class="text-center mb-5">Iniciar sesión</h2>
+    <div class="mb-4 input-group input-group-lg"> <!-- Añade la clase input-group-lg -->
+      <span class="input-group-text bg-primary"><i class='bx bx-user text-light'></i></span>
+      <input type="email" class="form-control" id="loginEmail" name="email" aria-describedby="emailHelp" placeholder="Correo electrónico" required>
+    </div>
+    <div class="mb-4 input-group input-group-lg"> <!-- Añade la clase input-group-lg -->
+      <span class="input-group-text bg-primary"><i class='bx bx-lock-alt text-light'></i></span>
+      <input type="password" class="form-control" id="loginPassword" name="password" placeholder="Contraseña" required>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg d-block mx-auto">Iniciar sesión</button>
+    <div class="mt-5 text-center">
+      ¿Aún no tienes cuenta? <a href="/registrarse">Regístrate</a>
+    </div>
+  </form>
+</div>

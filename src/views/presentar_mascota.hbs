@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+ <header class="headerDetalles">
+  <div class="text-center mb-4 d-flex justify-content-between" style="padding-left: 30px; padding-right: 30px;">
+    <div> <!-- Este contenedor ms-auto alinea los elementos a la izquierda -->
+      <button type="button" class="btn btn-outline-info text-black" onclick="window.history.back();">
+        Regresar
+        <a href="/archivos" style="color: inherit; text-decoration: none;"></a>
+      </button>
+    </div>
+
+    <div class="me-2"> <!-- Este contenedor me-2 alinea los elementos a la derecha -->
+      <a href="/new_mascota/{{contacto.cedula}}/{{id}}" class="btn btn-primary">Agregar mascota</a>
+    </div>
+  </div>
+</header>
+
+
+  <main>
+
+
+
+    <div class="mainGeneral">
+
+      <div class="mainDetalles">
+
+        <div class="containerDetalles_1">
+          <section>
+
+            <div class="card-body">
+
+              <h3 style="font-size: 50px;"> {{contacto.nombre}}</h3><br>
+              <h3 style="font-size: 25px;"><i class='bx bx-mail-send' style="color: white;"></i> {{contacto.correo}}
+              </h3><br>
+              <h3 style="font-size: 25px;"><i class='bx bx-phone' style="color: white;"></i> {{contacto.telefono}}</h3>
+              <br>
+              <h3 style="font-size: 25px;"><i class='bx bx-id-card' style="color: white;"></i> {{contacto.cedula}}</h3>
+              <br>
+            </div>
+
+          </section>
+
+
+
+        </div>
+
+        <div class="containerDetalles_2">
+
+          <section>
+
+            <div style="margin-bottom: 10px;margin-top: -30px;box-shadow:  0 0 30px #22b2eb8b;;padding: 5px;">
+              {{#if contacto.photo}}
+              <img src="{{contacto.photo}}" class="card-img-top mx-auto" style="width: 350px; height: 320px; "
+                alt="Foto de {{this.nombre}}">
+              {{else}}
+              <img src="images/user.avif" class="card-img-top rounded-circle mx-auto"
+                style="width: 350px; height: 320px;" alt="Foto predeterminada">
+              {{/if}}
+            </div>
+
+          </section>
+
+          <section class="contenedor Descripcion">
+
+
+
+          </section>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+    <section class="contenedor" style="text-align: center; font-size: 24px; font-weight: bold; color: gray;">
+
+      <section class="galeria">
+        <div class="cardsG">
+          <div class="cardG">
+            <img src="images/perro.png" alt="">
+          </div>
+          <div class="cardG">
+            <img src="images/gato.png" alt="">
+          </div>
+          <div class="cardG">
+            <img src="images/pajaro.png" alt="">
+          </div>
+          <div class="cardG">
+            <img src="images/feliz.png" alt="">
+          </div>
+
+        </div>
+      </section>
+
+      <p>En esta sección podrás agregar, crear, actualizar y revisar los registros médicos de las mascotas de
+        <b>{{contacto.nombre}}</b> que tengan guardado en la base de datos.
+      </p>
+
+
+
+    </section>
+
+    <section class="contenedor">
+
+      <h2 class="" style="color: #000000fe; font-size: 35px; font-weight: bold; border-bottom: 3px solid #22B3EB; ">
+        Mascotas de {{contacto.nombre}}</h2>
+
+    </section>
+
+    <div class="container" style="border-bottom: 3px solid #22B3EB; margin-bottom: 10px;">
+      <div class="row">
+        {{#each mascotas}}
+        <div class="col-md-4 mb-4">
+          <div class="" style="width: auto;">
+
+            <div class="card-body">
+              <div class="itemsContainer">
+
+                <div class="itemPhoto" style="margin-bottom: 10px;">
+                  {{#if datos.photo}}
+                  <img src="{{datos.photo}}" class="card-img-top mx-auto " style="width: 150px; height: 150px; "
+                    alt="Foto de {{this.nombre}}">
+                  {{else}}
+                  <img src="images/user.jpg" class="card-img-top" style="width: 150px; height: 150px;"
+                    alt="Foto predeterminada">
+                  {{/if}}
+                </div>
+
+                <div class="itemDataG">
+
+                  <h5 class="card-title" style="font-size: 25px; margin-top: 5px;">{{datos.nombre}}</h5><br>
+                  <h6 class="card-subtitle mb-2 text-muted"><b>Categoria: </b> {{datos.categoria}}</h6>
+                  <h6 class="card-subtitle mb-2 text-muted"><b>Raza: </b> {{datos.raza}}</h6>
+                  <h6 class="card-subtitle mb-2 text-muted"><b>Sexo: </b> {{datos.sexo}}</h6><br><br>
+
+                  <button class="btn btn-primary toggle-records" style="background-color: green; font-size: 12px;"
+                    data-toggle="modal" data-target="#registro-medico-modal-{{id}}"><i class='bx bx-history'
+                      style="color: white;"></i>
+                    Historial
+                  </button>
+
+
+                  <a style="font-size: 12px;"
+                    href="/editar?mascota_id={{id}}{{#if ../cita_id}}&cita_id={{../cita_id}}{{/if}}{{#if ../id}}&persona_id={{../id}}{{/if}}"
+                    class="btn btn-primary"><i class='bx bx-calendar' style="color: white;"></i>Atender</a>
+
+
+                  <!--<p class="card-text">
+                    Edad: {{datos.edad}} años<br />
+                    Peso: {{datos.peso}}<br />
+                    Altura: {{datos.altura}}<br />
+                    <br />
+                    Dueño: {{datos.dueño}}
+                  </p> -->
+
+
+
+                </div>
+
+
+
+
+
+              </div>
+
+            </div>
+
+
+
+
+            <!-- Botón para abrir el modal -->
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="registro-medico-modal-{{id}}" tabindex="-1" role="dialog"
+              aria-labelledby="registro-medico-modal-label-{{id}}" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="registro-medico-modal-label-{{id}}">Registros Médicos de
+                      {{datos.nombre}}
+                    </h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="itemPhoto" style="margin-bottom: 10px; text-align: center;  margin-top: 10px;">
+                    {{#if datos.photo}}
+                    <img src="{{datos.photo}}" class="card-img-top mx-auto "
+                      style="width: 150px; height: 150px;border-radius: 7px; " alt="Foto de {{this.nombre}}">
+                    {{else}}
+                    <img src="/images/user.jpg" class="card-img-top"
+                      style="width: 150px; height: 150px; border-radius: 7px;" alt="Foto predeterminada">
+                    {{/if}}
+                  </div>
+
+                  <h5 style="font-weight: 15px; margin-left: 10px; margin-top: 10px;">Datos Generales</h5>
+
+                  <div style="margin-top: 10px; margin-bottom: 10px;">
+                    <div style="margin-left: 20px; display: flex;">
+
+                      <p class="modal-title" id="registro-medico-modal-label-{{id}}"><b>Edad:</b>
+                        {{datos.edad}} años
+                      </p>
+
+                      <p class="modal-title" style="margin-left: 40px;" id="registro-medico-modal-label-{{id}}">
+                        <b>Altura:</b>
+                        {{datos.altura}} <b>cm</b>
+                      </p>
+
+
+
+                    </div>
+
+                    <div style="margin-left: 20px; display: flex;">
+
+                      <p class="modal-title" id="registro-medico-modal-label-{{id}}"><b>Peso:</b>
+                        {{datos.peso}}<b>kg</b>
+                      </p>
+                      <p class="modal-title" style="margin-left: 40px;" id="registro-medico-modal-label-{{id}}">
+                        <b>Identificacón</b>
+                        {{datos.dueño}}
+                      </p>
+                    </div>
+
+                  </div>
+                  <div class="modal-body">
+
+                    <h5 style="font-weight: 15px; margin-left: 10px; margin-top: 10px;">Vacunas y Desparacitaciónes</h5>
+
+
+                    {{#each datos.registro_medico}}
+                    <div class="registro border p-3 mb-3" style="border-radius: 7px;">
+                      <p style="font-weight: bold; text-align: center;"> {{this.datos.motivo}}</p>
+                      <p><strong>Sobre:</strong> {{this.datos.sobre}}</p>
+                      <p><strong>Fecha de Revisión:</strong> {{this.datos.fechaRevision}}</p>
+                      <p><strong>Próxima Visita:</strong> {{this.datos.proximaVisita}}</p>
+                    </div>
+                    {{/each}}
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+
+
+
+
+      <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+          document.querySelectorAll('.toggle-records').forEach(button => {
+            button.addEventListener('click', function () {
+              let mascotaId = this.getAttribute('data-id');
+              let registroMedicoDiv = document.getElementById(`registro-medico-${mascotaId}`);
+              if (registroMedicoDiv.style.display === "none") {
+                registroMedicoDiv.style.display = "block";
+                this.textContent = "Ocultar Registros Médicos";
+              } else {
+                registroMedicoDiv.style.display = "none";
+                this.textContent = "Mostrar Registros Médicos";
+              }
+            });
+          });
+        });
+      </script>
+    </div>
+
+    <section class="sectionFinal">
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+  </main>
+
+  <footer>
+
+    <h2 class="titu_fin"> &copy; Clinica Veterinaria Solvitec <br>Todos los Derechos Reservados</h2>
+
+  </footer>
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>

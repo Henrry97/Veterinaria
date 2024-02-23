@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <header class="headerDetalles">
+
+
+      <button type="button" class="btn btn-outline-info text-black"style="margin-left: 20px;" onclick="window.history.back();">Regresar</button>
+
+  </header>
+
+  <main>
+
+    <section class="contenedor">
+
+      <h2 class="" style="color: #000000fe; font-size: 35px; font-weight: bold; text-align: center;  ">
+        Nuevo Registro Medico</h2>
+
+      <p style="text-align: center; font-size: 24px; font-weight: bold; color: gray; border-bottom: 3px solid #22B3EB;">
+        Actualiza un nuevo registro medico para
+      </p>
+
+      <div class="container mt-4">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="formularioAtencion">
+              <form action="/cita/atender" method="POST">
+                <div class="form-group">
+                  <label for="edad">Edad</label>
+                  <input type="text" class="form-control" id="edad" name="edad" />
+                </div>
+                <div class="form-row">
+            <div class="form-group col">
+              <label for="altura">Altura</label>
+              <div class="input-group">
+                <input type="number" step="0.01" class="form-control" id="altura" name="altura" />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group col">
+              <label for="peso">Peso</label>
+              <div class="input-group">
+                <input type="number" step="0.01" class="form-control" id="peso" name="peso" />
+                <div class="input-group-append">
+                  <span class="input-group-text">kg</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                <div class="form-group">
+                  <label for="motivo">Motivo</label>
+                  <input type="text" class="form-control" id="motivo" name="motivo" />
+                </div>
+                <div class="form-group">
+                  <label for="sobre">Sobre</label>
+                  <textarea class="form-control" id="sobre" name="sobre"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="fechaAtencion">Fecha de Atención</label>
+                  <input type="date" class="form-control" id="fechaAtencion" name="fechaAtencion" />
+                </div>
+                <div class="form-group">
+                  <label for="proximaFechaRevision">Próxima Fecha de Revisión</label>
+                  <input type="date" class="form-control" id="proximaFechaRevision" name="proximaFechaRevision" />
+                </div>
+
+                <input type="hidden" name="citaId" value="{{id_cita}}" />
+                <input type="hidden" name="mascotaId" value="{{id_mascota}}">
+                <input type="hidden" name="contactoId" value="{{id_persona}}">
+                <br>
+                <button type="submit" class="btn btn-success btn-block">Guardar</button>
+                <button type="button" class="btn btn-warning btn-block cancelarAtencionBtn"
+                  onclick="window.history.back();">Cancelar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+
+
+
+
+
+  </main>
+
+  <footer>
+
+    <h2 class="titu_fin"> &copy; Clinica Veterinaria Solvitec <br>Todos los Derechos Reservados</h2>
+
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const fechaHoy = new Date().toISOString().slice(0, 10); // Obtener la fecha actual en formato yyyy-mm-dd
+      document.querySelectorAll('[id^="fechaAtencion"]').forEach((input) => {
+        input.value = fechaHoy;
+      });
+    });
+  </script>
+
+</body>
+
+</html>

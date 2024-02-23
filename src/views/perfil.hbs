@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<body>
+
+  <header class="headerMensaje">
+
+    <button type="button" class="btn btn-outline-info text-black" onclick="window.history.back();">
+        Regresar
+        <a href="/home" style="color: inherit; text-decoration: none;"></a>
+      </button>
+  </header>
+
+  <main>
+
+    <section class="contenedorPerfil" style="">
+
+      <div class="contenedor" style="align-items: center;  justify-content: center; display: flex;">
+        <div style=" margin-right: 20px;">
+
+          <h2 style="margin-top: 20px; text-align: center;">Clinica Veterinaria<br> Solvitec</h2>
+
+
+        </div>
+
+        <div style=" margin-left: 20px;">
+
+          <div style="">
+            {{#if perfil.photo}}
+            <img src="{{perfil.photo}}" class="card-img-top mx-auto" style="width: 200px; height: 200px; "
+              alt="Foto de {{this.nombre}}">
+            {{else}}
+            <img src="images/user.avif" class="card-img-top rounded-circle mx-auto" style="width: 200px; height: 200px;"
+              alt="Foto predeterminada">
+            {{/if}}
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+    </section>
+
+     <section class="sectionFinal">
+
+
+
+    </section>
+
+    <section>
+
+      <div class="contenedor">
+
+        <h5 class=""
+          style="color: #000000fe; font-size: 20px; margin-bottom: 30px; font-weight: bold;  border-bottom: 3px solid #22B3EB;">
+          Datos Generales</h5>
+
+        <div class="col-md-8 ">
+          <!-- Información del perfil -->
+          <p><strong>Propietario:</strong> {{perfil.propietario}}</p>
+          <p><strong>Correo Electrónico:</strong> {{perfil.correosolvitec}}</p>
+          <p><strong>Telefono:</strong> {{perfil.telefono}}</p>
+          <p><strong>Direccion:</strong> {{perfil.direccion}}</p>
+
+          <div class="text-center"> <!-- Agrega esta línea para centrar el botón -->
+            <button id="editarPerfilBtn" class="btn btn-primary">Editar</button>
+          </div>
+        </div>
+
+<div class="container mt-5">
+      <div class="row">
+
+
+        <!-- Formulario de edición (oculto inicialmente) -->
+        <div id="formularioEdicion" style="display: none;">
+          <div class="form-group">
+            <label for="nombrePerfil">Nombre</label>
+            <input type="text" class="form-control" id="nombrePerfil" value="{{perfil.nombre}}" />
+          </div>
+
+          <div class="form-group">
+            <label for="telefonoPerfil">Telefono</label>
+            <input type="text" class="form-control" id="telefonoPerfil" value="{{perfil.telefono}}" />
+          </div>
+          <div class="form-group">
+            <label for="direccionPerfil">Direccion</label>
+            <input type="text" class="form-control" id="direccionPerfil" value="{{perfil.direccion}}" />
+          </div>
+          <div class="form-group d-md-none">
+            <label for="serviciosPerfil">Servicios</label>
+            <input type="text" class="form-control" id="serviciosPerfil" value="{{perfil.servicios}}" />
+          </div>
+          <div class="form-group d-md-none">
+            <label for="fotoPerfilUrl">Enlace de la Foto</label>
+            <input type="text" class="form-control" id="fotoPerfilUrl" value="{{perfil.foto}}" />
+          </div>
+
+          <!-- Agrega más campos según sea necesario -->
+          <button id="guardarCambiosBtn" class="btn btn-primary">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+      </div>
+
+      <h5 class=""
+        style="color: #000000fe; font-size: 20px; margin-bottom: 30px; font-weight: bold; text-align: center;">
+        Servicios</h5>
+
+      <div style="display: flex; align-items: center; justify-content: center;">
+
+
+
+        <div class="cardServicios">
+
+          <img src="images/vacunas.png" style="width: 70px; height: 70px; border-radius: 8px;">
+          <p style="font-weight: bold; font-size: 17px; margin-top: 10px;">Vacunas</p>
+          <p style="font-weight: bold;">Vacunala contra las enfermedades</p>
+
+
+        </div>
+        <div class="cardServicios">
+
+          <img src="images/parasito.png" style="width: 70px; height: 70px; border-radius: 8px;">
+          <p style="font-weight: bold; font-size: 17px; margin-top: 10px;">Desparacitación</p>
+          <p style="font-weight: bold;">Elimina las bacterias del estomago</p>
+
+
+        </div>
+        <div class="cardServicios">
+
+          <img src="images/cirugia.png" style="width: 70px; height: 70px; border-radius: 8px;">
+          <p style="font-weight: bold; font-size: 17px; margin-top: 10px;">Cirugia</p>
+          <p style="font-weight: bold;">Con herramientas muy avanzadas</p>
+
+
+        </div>
+        <div class="cardServicios">
+
+          <img src="images/cuarto-de-bano.png" style="width: 70px; height: 70px; border-radius: 8px;">
+          <p style="font-weight: bold; font-size: 17px; margin-top: 10px;">Baño y Corte</p>
+          <p style="font-weight: bold;">Manten siempre limpia a tu mascota</p>
+
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+    
+
+
+  </main>
+
+   <section class="sectionFinal">
+
+
+
+    </section>
+
+  <footer>
+
+    <h2 class="titu_fin"> &copy; Clinica Veterinaria Solvitec <br>Todos los Derechos Reservados</h2>
+
+  </footer>
+
+  <script>
+    var srcFoto = "{{perfil.foto}}" ||
+      "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg";
+    document.getElementById('fotoPerfil').src = srcFoto;
+  </script>
+
+
+
+</body>
+
+
+</html>

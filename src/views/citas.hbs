@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <body>
+    
+    <header id="headerArchivos" class="custom-navbar">
+    <div class="nav-logo">
+      <ul class="nav justify-content-center">
+        <li class="nav-item ">
+          <a class="nav-link active text-dark" aria-current="page" href="/home">
+            <i class='bx bx-home-smile'></i>
+            Inicio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="/archivos">
+            <i class='bx bx-folder-plus'></i>
+            Archivos
+          </a>
+        </li>
+        <li class="nav-item"  style="background-color: #fff; border-radius: 10px;">
+          <a class="nav-link text-dark" href="/cita">
+            <i class='bx bxs-calendar-plus'></i>
+            Citas
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class='bx bx-user'></i>
+            Perfil
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/perfil">Perfil</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/logout">Cerrar sesión</a>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="wave" style="width: 100vw; height: 80px; overflow: hidden;">
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+        <path d="M0.00,49.98 C165.63,140.63 337.75,-7.38 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+          style="stroke: none; fill: #fff;">
+        </path>
+      </svg>
+    </div>
+  </header>
+
+
+  <main>
+
+    <div class="contenedor">
+      <h2 class=""
+        style="color: #000000fe; font-size: 40px; margin-bottom: 30px; text-align: center; font-weight: bold;">
+        Citas Aceptadas</h2>
+      <p style="text-align: center; font-size: 24px; font-weight: bold; color: gray; border-bottom: 3px solid #22B3EB;">
+        En esta sección encuentras las citas que estan aceptadas y poder realizar la tención en el dia y la hora que estan asiganadas 
+      </p>
+
+
+    </div>
+
+    
+
+    <div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      {{#if citas.length}}
+        <div class="row">
+          {{#each citas}}
+            <div class="col-md-3 mb-4" style="">
+              <div class="card h-100" id="cita-{{this.id}}" style="margin-top: 10px;">
+                <div class="card-body" style="box-shadow:  0 0 30px #22b2eb8b;">
+                  <h5 class="card-title" style="text-align: center; font-size: 25px;font-weight: bold;">{{this.datos.nombre}}</h5>
+                  <h6 class="card-title" style="text-align: center; font-size: 17px;">{{this.datos.status}}</h6><br>
+                  <h6 class="card-subtitle mb-2 text-muted"><b>Mascota: </b> {{this.datos.mascota}}</h6>
+                  <h6 class="card-subtitle mb-2 text-muted"><b>Para:</b> {{this.datos.motivo}}</h6>
+                  <h6 class="card-subtitle mb-2 text-muted"><b>Descripción: </b> {{this.datos.descripcion}}</h6><br>
+                  <h6 class="card-subtitle mb-2 text-muted"><b>Fecha: </b> {{this.datos.fecha}}</h6><br><br>
+                  <div class="text-end">
+                    <button type="button" class="btn btn-primary atenderCitaBtn" onclick="window.location.href='/presentar_mascota?id={{this.datos.id_usuario}}&cita_id={{this.id}}';">Atender</button>
+                    <button type="button" class="btn btn-secondary noPresenteBtn" data-id="{{this.id}}">No se presentó</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      {{else}}
+        <div class="alert alert-info" role="alert">
+          No existen citas aceptadas todavía.
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>
+
+<section class="contenedor" style="text-align: center; font-size: 24px; font-weight: bold; color: gray;">
+      <section class="galeria">
+        <div class="cardsG">
+          <div class="cardG">
+            <img src="images/perro.png" alt="">
+          </div>
+          <div class="cardG">
+            <img src="images/gato.png" alt="">
+          </div>
+          <div class="cardG">
+            <img src="images/pajaro.png" alt="">
+          </div>
+          <div class="cardG">
+            <img src="images/feliz.png" alt="">
+          </div>
+
+        </div>
+      </section>
+    </section>
+
+<section class="sectionFinal">
+
+
+
+    </section>
+
+  
+  </main>
+
+  <footer>
+
+      <h2 class="titu_fin"> &copy; Clinica Veterinaria Solvitec <br>Todos los Derechos Reservados</h2>
+
+    </footer>
+  </body>
+
+
+
+</html>
+
+
+  
+
+
+
+
+
+
+
+
+

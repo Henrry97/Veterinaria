@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<body>
+  <header class="headerMensaje">
+
+    <button type="button" class="btn btn-warning btn-block cancelarAtencionBtn"
+      style="margin-left: 20px;   background-color: #22B3EB;" onclick="window.history.back();">Regresar</button>
+  </header>
+
+  <main>
+
+
+    <section class="contenedor" style="align-items: center;  justify-content: center;display: flex;">
+
+      <div class="estedeaqui" style="box-shadow:  0 0 30px #22b2eb8b; width: 600px; border-radius: 8px;">
+
+        <h5 class="text-center mt-4 mb-4">Ingresa los datos de la mascota</h5>
+
+        <div class="row justify-content-center">
+          <div class="col-md-6" style="width: auto;">
+            <form class="form-floating mb-3" action="/new-mascota" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="userId" value="{{userId}}" />
+              <!-- Nombre de la mascota -->
+              <div style="display: flex;">
+
+                <div class="form-floating mb-3" style="width: 180px; margin-right: 10px;">
+                  <input type="text" class="form-control" id="nombreMascota" name="nombre"
+                    placeholder="Nombre de la mascota" autofocus />
+                  <label for="nombreMascota">Nombre de la mascota</label>
+                </div>
+                <!-- Edad de la mascota -->
+                <div class="form-floating mb-3" style="width: 180px; margin-left: 6px; margin-right: 6px;">
+                  <input type="number" class="form-control" id="edadMascota" name="edad"
+                    placeholder="Edad de la mascota" />
+                  <label for="edadMascota">Edad de la mascota</label>
+                </div>
+                <!-- Especie -->
+                <div class="form-floating mb-3" style="width: 180px; margin-left: 10px;">
+                  <select class="form-select" id="especie" name="categoria" aria-label="Floating select example">
+                    <option selected></option>
+                    <option value="Perro">Perro</option>
+                    <option value="Gato">Gato</option>
+                    <option value="Pajaro">Pájaro</option>
+                    <option value="Camello">Camello</option>
+                  </select>
+                  <label for="especie">Especie</label>
+                </div>
+
+              </div>
+
+              <div style="display: flex;">
+
+                <div class="form-floating mb-3" style="width: 180px; margin-right: 10px;">
+                  <input type="text" class="form-control" id="pesoMascota" name="peso"
+                    placeholder="Peso de la mascota" />
+                  <label for="pesoMascota">Peso de la mascota</label>
+                </div>
+                <!-- Altura de la mascota -->
+                <div class="form-floating mb-3" style="width: 180px;margin-left: 6px; margin-right: 6px;">
+                  <input type="text" class="form-control" id="alturaMascota" name="altura"
+                    placeholder="Altura de la mascota" />
+                  <label for="alturaMascota">Altura de la mascota</label>
+                </div>
+
+                <div class="form-floating mb-3" style="width: 180px; margin-left: 10px;">
+                  <input type="text" class="form-control" id="razaMascota" name="raza"
+                    placeholder="Raza de la mascota" />
+                  <label for="razaMascota">Raza</label>
+                </div>
+
+
+              </div>
+              <div class="form-floating mb-3">
+                <select class="form-select" id="sexoMascota" name="sexo" aria-label="Floating select example">
+                  <option selected>Selecciona una opción</option>
+                  <option value="Macho">Macho</option>
+                  <option value="Hembra">Hembra</option>
+                </select>
+                <label for="sexoMascota">Sexo</label>
+              </div>
+              <!-- Dueño -->
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="duenoMascota" name="dueno"
+                  placeholder="Cedula del dueño de la mascota" value="{{cedula}}" readonly="readonly" />
+                <label for="duenoMascota">Cedula Dueño</label>
+              </div>
+              <!-- Foto -->
+              <div class="form-floating mb-3 d-md-none">
+                <input type="file" id="fotoMascota" name="foto" class="form-control" />
+                <label for="fotoMascota">Foto</label>
+              </div>
+
+              <!-- Botones -->
+              <div class="text-center mb-5 d-flex justify-content-center">
+                <div class="me-2">
+                  <button type="submit" class="btn btn-primary" style="background-color: darkgreen;">Guardar</button>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-primary" onclick="window.history.back()">Volver</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+    </section>
+  </main>
+
+   <footer>
+
+    <h2 class="titu_fin"> &copy; Clinica Veterinaria Solvitec <br>Todos los Derechos Reservados</h2>
+
+  </footer>
+</body>
+
+
+
+
+</html>
